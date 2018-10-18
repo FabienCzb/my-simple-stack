@@ -1,15 +1,16 @@
 package deqo.fcaz.mysimplestack;
 
+import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 public class Stack implements SimpleStack{
 
     private int size;
-    private int[] pile;
+    private ArrayList<Integer> pile;
 
-    public Stack(int size, int[] pile) {
-        this.size = size;
-        this.pile = pile;
+    public Stack() {
+        this.size = 0;
+        this.pile = new ArrayList<Integer>(size);
     }
 
     public boolean isEmpty() {
@@ -22,16 +23,22 @@ public class Stack implements SimpleStack{
 
     public void push(int val) {
         this.size += 1;
-        this.pile[this.size - 1] = val;
+        this.pile.add(val);
     }
 
     public int peek() throws EmptyStackException {
-        return pile[this.size];
+        return pile.get(this.size-1);
     }
 
     public int pop() throws EmptyStackException {
-        int i = pile[this.size - 1];
-        this.size =- 1;
-        return i;
+        if(this.size != 0) {
+            int tete = pile.get(size - 1);
+            this.pile.remove(size - 1);
+            this.size -= 1;
+            return tete;
+        }
+        else{
+            return -1;
+        }
     }
 }
