@@ -4,23 +4,34 @@ import java.util.EmptyStackException;
 
 public class Stack implements SimpleStack{
 
+    private int size;
+    private int[] pile;
+
+    public Stack(int size, int[] pile) {
+        this.size = size;
+        this.pile = pile;
+    }
+
     public boolean isEmpty() {
-        return false;
+        return this.getSize() == 0;
     }
 
     public int getSize() {
-        return 0;
+        return this.size;
     }
 
-    public void push(Item item) {
-
+    public void push(int val) {
+        this.size += 1;
+        this.pile[this.size - 1] = val;
     }
 
-    public Item peek() throws EmptyStackException {
-        return null;
+    public int peek() throws EmptyStackException {
+        return pile[this.size];
     }
 
-    public Item pop() throws EmptyStackException {
-        return null;
+    public int pop() throws EmptyStackException {
+        int i = pile[this.size - 1];
+        this.size =- 1;
+        return i;
     }
 }

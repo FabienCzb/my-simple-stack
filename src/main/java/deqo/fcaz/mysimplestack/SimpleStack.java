@@ -8,21 +8,21 @@ public interface SimpleStack {
      */
     public boolean isEmpty();
     /**
-     * Returns the number of items in this stack.
+     * Returns the number of ints in this stack.
      */
     public int getSize();
     /**
-     * Pushes an item onto the top of this stack.
-     * null item is allowed.
+     * Pushes an int onto the top of this stack.
+     * null int is allowed.
      */
-    public void push(Item item);
+    public void push(int val);
     /**
      * Looks at the object at the top of this stack without removing it from the stack.
      */
-    public Item peek() throws EmptyStackException;
+    public int peek() throws EmptyStackException;
     /**
      * Removes the object at the top of this stack and returns that object as the value of this function.
      * @throws EmptyStackException if this stack is empty.
      */
-    public Item pop() throws EmptyStackException;
+    public int pop() throws EmptyStackException;
 }
