@@ -27,7 +27,7 @@ public class Stack implements SimpleStack{
     }
 
     public int peek() throws EmptyStackException {
-        return pile.get(this.size-1);
+        return pile.get(size-1);
     }
 
     public int pop() throws EmptyStackException {
