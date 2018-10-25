@@ -22,7 +22,7 @@ public class Stack implements SimpleStack{
     }
 
     public void push(int val) {
-        this.size += 1;
+        this.size = this.size + 1;
         this.pile.add(val);
     }
 
